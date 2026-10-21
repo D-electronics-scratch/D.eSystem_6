@@ -1,55 +1,61 @@
 # D.eSystem 6
 
-D.eSystem 6 is an X86_64 operating system developed in C, featuring a small desktop environment with D.UI
-and a collection of system utilities.
+D.eSystem 6 is an x86-64 operating system developed primarily in C. It features a small graphical desktop environment called D.UI and a collection of system utilities.
 
-The project first started from the Limine C Template and has since undergone extensivedevelopment and code changes.
+The project originally started from the Limine C Template and has since undergone extensive development and code changes.
 
-# D.eSystem OS project status:
-Experimental features and the system itself is still in development with code changes and updates.
+## Status
 
-# Features: 
--Graphical desktop enviroment (D.UI)
--Keyboard input and shell
--Calculator
--D.eSystem info application
--FAT32 filesystem code and disk utilities
+D.eSystem is under active development. Features and system components may change between versions.
 
-# Building
+## Features
 
-D.eSystem uses GNU Make to build the D.Kernel and create a bootable ISO image.
+- Graphical desktop environment (D.UI)
+- Keyboard input and shell
+- Calculator
+- D.eSystem information application
+- FAT32 filesystem code and disk utilities
 
-# Requirements
+## Building
 
--GNU Make
--A compatible C compiler and toolchain, such as GCC and GNU binutils
--xorriso to create the ISO image
--QEMU, if you want to run the system in an emulator
+D.eSystem uses GNU Make to build the kernel and create a bootable ISO image.
 
-# Requirements if you want to run the system on real hardware
--X86_64 CPU
--80+mb of RAM
--UEFI firmware (recomended)
+### Requirements
 
-# Build the ISO and run D.eSystem in qemu 
+- GNU Make
+- A compatible C compiler and toolchain, such as GCC and GNU binutils
+- `xorriso` to create the ISO image
+- QEMU to run the system in an emulator
 
-run this command in the project folder: make run-uefi
+### Build and run with UEFI in QEMU
 
+From the project root directory, run:
 
-# Project structure
+```bash
+make run-uefi
+```
 
--kernel/src - Kernel source code and releated files
--kernel/linker-scripts/-Linker scripts
--initrd/ -Project assets
-limine.conf-Bootloader configuration
-GNUmakefile-Top level build rules
+This target builds the ISO and launches the system in QEMU using UEFI.
 
-#Background
+## Project structure
 
-D.eSystem is a operatingsystem project fromD.electronics,it all started with operating simulators, with
-D.eSystem 6.0.1 alpha I swithed from OS-simulator dev to real OS dev.
+- `kernel/src/` — Kernel source code and related files
+- `kernel/linker-scripts/` — Linker scripts
+- `initrd/` — Project assets
+- `limine.conf` — Bootloader configuration
+- `GNUmakefile` — Top-level build rules
 
-#License
+## Background
 
-See the LICENSE file and the licenses notices accompanying third-party components. The licensing
-and attribution of original template code and third party components should be respected.
+D.eSystem is a project by D.electronics. It began with operating system simulators. With D.eSystem 6.0.1 alpha, development shifted from OS simulation to a real operating system.
+
+## License
+
+See the `LICENSE` file and the license notices accompanying third-party components. Original template code and third-party components remain subject to their applicable license terms.
+
+## Older versions
+
+Earlier versions of D.eSystem are available here:
+
+https://github.com/D-electronics-scratch/all_D.eSystem_versions
+
