@@ -33,6 +33,7 @@ void timer_finished_ui();
 void hour_ui();
 void minute_ui();
 void seccond_ui();
+void unknown_key();
 
 
 
@@ -53,35 +54,35 @@ void clock_ui(struct limine_framebuffer *fb) {
 
     //close icon
 
-    draw_rect(fb, x, y, icon_w, icon_h, 0x00D4FF);
+    draw_rect(fb, x, y, icon_w, icon_h, 0xC0C0C0);
 
-    draw_rect(fb,x + 15, y + 5, 5, 5, 0x0078D7);
-    draw_rect(fb,x + 20, y + 10, 5, 5, 0x0078D7);
-    draw_rect(fb,x + 25, y + 15, 5, 5, 0x0078D7);
-    draw_rect(fb,x + 30, y + 20, 5, 5, 0x0078D7);
-    draw_rect(fb,x + 35, y + 25, 5, 5, 0x0078D7);
-    draw_rect(fb,x + 40, y + 30, 5, 5, 0x0078D7);
-    draw_rect(fb,x + 45, y + 35, 5, 5, 0x0078D7);
-    draw_rect(fb,x + 50, y + 40, 5, 5, 0x0078D7);
-    draw_rect(fb,x + 55, y + 45, 5, 5, 0x0078D7);
-    draw_rect(fb,x + 60, y + 50, 5, 5, 0x0078D7);
-    draw_rect(fb,x + 65, y + 55, 5, 5, 0x0078D7);
-    draw_rect(fb,x + 70, y + 60, 5, 5, 0x0078D7);
-    draw_rect(fb,x + 75, y + 65, 5, 5, 0x0078D7);
+    draw_rect(fb,x + 15, y + 5, 5, 5, 0x0044CC);
+    draw_rect(fb,x + 20, y + 10, 5, 5, 0x0044CC);
+    draw_rect(fb,x + 25, y + 15, 5, 5, 0x0044CC);
+    draw_rect(fb,x + 30, y + 20, 5, 5, 0x0044CC);
+    draw_rect(fb,x + 35, y + 25, 5, 5, 0x0044CC);
+    draw_rect(fb,x + 40, y + 30, 5, 5, 0x0044CC);
+    draw_rect(fb,x + 45, y + 35, 5, 5, 0x0044CC);
+    draw_rect(fb,x + 50, y + 40, 5, 5, 0x0044CC);
+    draw_rect(fb,x + 55, y + 45, 5, 5, 0x0044CC);
+    draw_rect(fb,x + 60, y + 50, 5, 5, 0x0044CC);
+    draw_rect(fb,x + 65, y + 55, 5, 5, 0x0044CC);
+    draw_rect(fb,x + 70, y + 60, 5, 5, 0x0044CC);
+    draw_rect(fb,x + 75, y + 65, 5, 5, 0x0044CC);
 
-    draw_rect(fb,x + 75, y + 5, 5, 5, 0x0078D7);
-    draw_rect(fb,x + 70, y + 10, 5, 5, 0x0078D7);
-    draw_rect(fb,x + 65, y + 15, 5, 5, 0x0078D7);
-    draw_rect(fb,x + 60, y + 20, 5, 5, 0x0078D7);
-    draw_rect(fb,x + 55, y + 25 , 5, 5, 0x0078D7);
-    draw_rect(fb,x + 50, y + 30, 5, 5, 0x0078D7);
-    draw_rect(fb,x + 45, y + 35, 5, 5, 0x0078D7);
-    draw_rect(fb,x + 40, y + 40, 5, 5, 0x0078D7);
-    draw_rect(fb,x + 35, y + 45, 5, 5, 0x0078D7);
-    draw_rect(fb,x + 30, y + 50 , 5, 5, 0x0078D7);
-    draw_rect(fb,x + 25, y + 55, 5, 5, 0x0078D7);
-    draw_rect(fb,x + 20, y + 60, 5, 5, 0x0078D7);
-    draw_rect(fb,x + 15, y + 65, 5, 5, 0x0078D7);
+    draw_rect(fb,x + 75, y + 5, 5, 5, 0x0044CC);
+    draw_rect(fb,x + 70, y + 10, 5, 5, 0x0044CC);
+    draw_rect(fb,x + 65, y + 15, 5, 5, 0x0044CC);
+    draw_rect(fb,x + 60, y + 20, 5, 5, 0x0044CC);
+    draw_rect(fb,x + 55, y + 25 , 5, 5, 0x0044CC);
+    draw_rect(fb,x + 50, y + 30, 5, 5, 0x0044CC);
+    draw_rect(fb,x + 45, y + 35, 5, 5, 0x0044CC);
+    draw_rect(fb,x + 40, y + 40, 5, 5, 0x0044CC);
+    draw_rect(fb,x + 35, y + 45, 5, 5, 0x0044CC);
+    draw_rect(fb,x + 30, y + 50 , 5, 5, 0x0044CC);
+    draw_rect(fb,x + 25, y + 55, 5, 5, 0x0044CC);
+    draw_rect(fb,x + 20, y + 60, 5, 5, 0x0044CC);
+    draw_rect(fb,x + 15, y + 65, 5, 5, 0x0044CC);
     draw_text(fb,x + 8, y + 85, "Press [Esc]", 0x0078D7);
 
     
@@ -112,7 +113,7 @@ void run_clock_d_elec() {
 
     
 
-    clear_screen(framebuffer, 0x0078D7);
+    clear_screen(framebuffer, 0xFFFFFF);
     print_main_ui();
     
    
@@ -131,7 +132,7 @@ void run_clock_d_elec() {
         return;
         
     } else if (key == '1') {
-        clear_screen(framebuffer, 0x0078D7);
+        clear_screen(framebuffer, 0xFFFFFF);
         print_main_ui();
 
         set_timer_ui(framebuffer);
@@ -139,14 +140,14 @@ void run_clock_d_elec() {
 
         t_sec = calculator_read_int(450, 230);
         t_sec2 = t_sec * 1000;
-        clear_screen(framebuffer, 0x0078D7);
+        clear_screen(framebuffer, 0xFFFFFF);
         print_main_ui();
 
         timer_running_ui(framebuffer);
 
        
         sleep (t_sec2); 
-        clear_screen(framebuffer, 0x0078D7);
+        clear_screen(framebuffer, 0xFFFFFF);
         print_main_ui();
         timer_finished_ui(framebuffer);
         
@@ -167,7 +168,7 @@ void run_clock_d_elec() {
         
     } else if (key == '2') {
         key = 0;
-        clear_screen(framebuffer, 0x0078D7);
+        clear_screen(framebuffer, 0xFFFFFF);
         print_main_ui();
        
 
@@ -175,20 +176,21 @@ void run_clock_d_elec() {
 
 
         hour = calculator_read_int(450, 230);
-        clear_screen(framebuffer, 0x0078D7);print_main_ui();
+        clear_screen(framebuffer, 0xFFFFFF);
+        print_main_ui();
        
 
         minute_ui(framebuffer);
 
 
         min = calculator_read_int(450, 230);
-        clear_screen(framebuffer, 0x0078D7);print_main_ui();
+        clear_screen(framebuffer, 0xFFFFFF);print_main_ui();
         print_main_ui();
         seccond_ui(framebuffer);
        
         sec = calculator_read_int(450, 230);
         
-        clear_screen(framebuffer, 0x0078D7);print_main_ui();
+        clear_screen(framebuffer, 0xFFFFFF);print_main_ui();
         
         print_main_ui();
         time_ui();
@@ -205,6 +207,8 @@ void run_clock_d_elec() {
 
 
     } else {
+        unknown_key(framebuffer);
+        sleep(5000);
         return;
 
     }
@@ -235,7 +239,7 @@ void run_clock_d_elec() {
         }
 
        
-        clear_screen(framebuffer, 0x0078D7);
+        clear_screen(framebuffer, 0xFFFFFF);
         print_main_ui();
         time_ui();
 
@@ -276,18 +280,18 @@ void timer(struct limine_framebuffer *fb) {
     uint32_t y = (H / 2) - (icon_h / 2);
 
 
-    draw_rect(fb, x, y, icon_w, icon_h, 0x00D4FF);
+    draw_rect(fb, x, y, icon_w, icon_h, 0xC0C0C0);
 
-    draw_rect(fb, x + 25, y + 10, 50, 5, 0x0078D7);
-    draw_rect(fb, x + 25, y + 10, 5, 25, 0x0078D7 );
-    draw_rect(fb, x + 70, y + 10, 5, 25, 0x0078D7 );
-    draw_rect(fb, x + 25, y + 35, 50, 5, 0x0078D7);
-    draw_rect(fb, x + 35, y + 40, 5, 15, 0x0078D7 );
-    draw_rect(fb, x + 60, y + 40, 5, 15, 0x0078D7 );
-    draw_rect(fb, x + 25, y + 55, 50, 5, 0x0078D7);
-    draw_rect(fb, x + 25, y + 60, 5, 15, 0x0078D7 );
-    draw_rect(fb, x + 70, y + 60, 5, 15, 0x0078D7 );
-    draw_rect(fb, x + 25, y + 70, 50, 10, 0x0078D7);
+    draw_rect(fb, x + 25, y + 10, 50, 5, 0x0044CC);
+    draw_rect(fb, x + 25, y + 10, 5, 25, 0x0044CC );
+    draw_rect(fb, x + 70, y + 10, 5, 25, 0x0044CC );
+    draw_rect(fb, x + 25, y + 35, 50, 5, 0x0044CC);
+    draw_rect(fb, x + 35, y + 40, 5, 15, 0x0044CC );
+    draw_rect(fb, x + 60, y + 40, 5, 15, 0x0044CC );
+    draw_rect(fb, x + 25, y + 55, 50, 5, 0x0044CC);
+    draw_rect(fb, x + 25, y + 60, 5, 15, 0x0044CC );
+    draw_rect(fb, x + 70, y + 60, 5, 15, 0x0044CC );
+    draw_rect(fb, x + 25, y + 70, 50, 10, 0x0044CC);
     draw_text(fb, x + 15, y + 85, "Press [1]", 0x0078D7 );
 
     
@@ -308,19 +312,19 @@ void clock_icon_app(struct limine_framebuffer *fb) {
     uint32_t y = (H / 2) - (icon_h / 2);
 
 
-    draw_rect(fb, x, y, icon_w, icon_h, 0x00D4FF);
+    draw_rect(fb, x, y, icon_w, icon_h, 0xC0C0C0);
 
 
 
-    draw_rect(fb, x + 10, y + 10, 10, 60, 0x0078D7);
-    draw_rect(fb, x + 80, y + 10, 10, 60, 0x0078D7);
+    draw_rect(fb, x + 10, y + 10, 10, 60, 0x0044CC);
+    draw_rect(fb, x + 80, y + 10, 10, 60, 0x0044CC);
 
-    draw_rect(fb, x + 20, y + 10, 60, 10, 0x0078D7);
-    draw_rect(fb, x + 20, y + 60, 60, 10, 0x0078D7);
+    draw_rect(fb, x + 20, y + 10, 60, 10, 0x0044CC);
+    draw_rect(fb, x + 20, y + 60, 60, 10, 0x0044CC);
 
   
-    draw_rect(fb, x + 50, y + 37, 4, 17, 0x0078D7);
-    draw_rect(fb, x + 50, y + 37, 20, 4, 0x0078D7);
+    draw_rect(fb, x + 50, y + 37, 4, 17, 0x0044CC);
+    draw_rect(fb, x + 50, y + 37, 20, 4, 0x0044CC);
 
 
     draw_text(fb, x + 15, y + 85, "Press [2]", 0x0078D7 );
@@ -363,7 +367,7 @@ void timer_running_ui(struct limine_framebuffer *fb) {
     uint32_t y = (H / 2) - (icon_h / 2);
 
 
-    draw_rect(fb, x, y, icon_w, icon_h, 0x00D4FF);
+    draw_rect(fb, x, y, icon_w, icon_h, 0xC0C0C0);
 
     draw_rect(fb, x + 100, y + 40, 200, 20, 0x0078D7);
     draw_text(fb, x + 130, y + 45, " Timer is runing! ", 0x00D4FF);
@@ -386,7 +390,7 @@ void timer_finished_ui(struct limine_framebuffer *fb) {
     uint32_t y = (H / 2) - (icon_h / 2);
 
 
-    draw_rect(fb, x, y, icon_w, icon_h, 0x00D4FF);
+    draw_rect(fb, x, y, icon_w, icon_h, 0xC0C0C0);
 
     draw_rect(fb, x + 100, y + 15, 200, 20, 0x0078D7);
     draw_text(fb, x + 130, y + 20, "     Finished!     ", 0x00D4FF);
@@ -463,5 +467,22 @@ void seccond_ui(struct limine_framebuffer *fb) {
 
 }
 
+
+
+void unknown_key(struct limine_framebuffer *fb) {
+
+    uint32_t W = fb->width;
+    uint32_t H = fb->height;
+
+    uint32_t icon_w = 400;
+    uint32_t icon_h = 100;
+    uint32_t x = (W / 2) - (icon_w / 2);
+    uint32_t y = (H / 2) - (icon_h / 2);
+
+    draw_rect(framebuffer, x, y, 400, 100, 0x000000);
+    draw_text(framebuffer, x + 100, y + 35, "You pressed an unknown key!!", 0xFFFFFF);
+    draw_text(framebuffer, x + 100, y + 55, "The clock will close in 5 sec", 0xFFFFFF);
+
+}
 
 

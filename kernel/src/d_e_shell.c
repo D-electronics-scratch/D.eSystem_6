@@ -262,6 +262,12 @@ if (ui_mode == 1) {
 
     } else if(strcmp(cmd, "open7file7viewer7test")) {
         
+    } else {
+        strcpy(awnswer, "Command not found!!");
+        change_lines();
+        strcpy(line_1, awnswer);
+        render_lines();
+        
     }
     
 } 

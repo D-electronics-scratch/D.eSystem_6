@@ -19,6 +19,7 @@
 void D_e_Sys_v_run();
 void GUI();
 void print_sys_specs();
+void unknown_key_i();
 extern int ui_mode;
 
 
@@ -41,6 +42,10 @@ void D_e_Sys_v_run() {
     }
     if (key == 27) {
         ui_desktop();
+        return;
+    } else {
+        unknown_key_i(framebuffer);
+        sleep(5000);
         return;
     }
 
@@ -124,5 +129,22 @@ void print_sys_specs(struct limine_framebuffer *fb) {
     char ram_text[32];
     itoa(ram / (1024 * 1024), ram_text, 10);
     draw_text(fb, x + 75, y + 100, ram_text, 0x404040);
+
+}
+
+
+void unknown_key_i(struct limine_framebuffer *fb) {
+
+    uint32_t W = fb->width;
+    uint32_t H = fb->height;
+
+    uint32_t icon_w = 400;
+    uint32_t icon_h = 100;
+    uint32_t x = (W / 2) - (icon_w / 2);
+    uint32_t y = (H / 2) - (icon_h / 2);
+
+    draw_rect(framebuffer, x, y, 400, 100, 0x000000);
+    draw_text(framebuffer, x + 100, y + 35, "You pressed an unknown key!!", 0xFFFFFF);
+    draw_text(framebuffer, x + 100, y + 55, "The info will close in 5 sec", 0xFFFFFF);
 
 }

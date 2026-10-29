@@ -23,7 +23,7 @@
 #include "main_ui.h"
 #include "desktop_ui.h"
 #include "thundercalculator.h"
-
+#include "debug_fw.h"
 
 
 struct limine_framebuffer *framebuffer;
@@ -260,6 +260,8 @@ void kernel_loop() {
                 open_d_e_shell();
             } else if (key == '6') {
                 file_viewer_open();
+            } else if (key == '7') {
+                open_debug();
             }
         }
     

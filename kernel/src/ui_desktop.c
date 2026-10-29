@@ -9,6 +9,7 @@ void info_icon();
 void d_e_shell_icon();
 void d_menu_icon();
 void files_icon();
+void debug_icon();
 
 void render_gui() {
 
@@ -18,6 +19,7 @@ void render_gui() {
     info_icon(framebuffer);
     d_e_shell_icon(framebuffer);
     files_icon(framebuffer);
+    debug_icon(framebuffer);
 
 
 }
@@ -209,5 +211,37 @@ void files_icon(struct limine_framebuffer *fb) {
     draw_rect(fb, x_2 + 15, y_2 + 15,40,20, 0x0094FF);
     draw_rect(fb , x_2 + 20, y_2 + 40 ,55 ,5, 0xFFFFFF);
     draw_text(fb, x_2 + 15, y_2 + 85, "Press [6]", 0xFF0000); 
+
+}
+
+
+void debug_icon(struct limine_framebuffer *fb) {
+
+
+    uint32_t W = fb->width;
+    uint32_t H = fb->height;
+
+    uint32_t icon_w = 100;
+    uint32_t icon_h = 100;
+
+    uint32_t x = (W / 2) - (icon_w / 2);
+    uint32_t y = (H / 2) - (icon_h / 2) + 330;
+    int x_2 = x - 350;
+    int y_2 = y - 300;
+    draw_rect(fb, x_2, y_2, icon_w, icon_h, 0x00FF00);
+    draw_rect(fb, x_2 + 15, y_2 + 35,65,25, 0xFF00FF);
+
+    draw_rect(fb, x_2 + 15, y_2 + 15,5,30, 0xFF00FF);
+    draw_rect(fb, x_2 + 35, y_2 + 15,5,30, 0xFF00FF);
+    draw_rect(fb, x_2 + 55, y_2 + 15,5,30, 0xFF00FF);
+    draw_rect(fb, x_2 + 75, y_2 + 15,5,30, 0xFF00FF);
+
+    draw_rect(fb, x_2 + 15, y_2 + 50,5,30, 0xFF00FF);
+    draw_rect(fb, x_2 + 35, y_2 + 50,5,30, 0xFF00FF);
+    draw_rect(fb, x_2 + 55, y_2 + 50,5,30, 0xFF00FF);
+    draw_rect(fb, x_2 + 75, y_2 + 50,5,30, 0xFF00FF);
+
+    draw_text(fb, x_2 + 15, y_2 + 85, "Press [7]", 0xFF0000);
+
 
 }
