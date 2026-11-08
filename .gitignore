@@ -1,0 +1,18 @@
+# Root build outputs
+/obj/
+/iso_root/
+/template.iso
+/template.hdd
+
+# Kernel build outputs
+/kernel/obj/
+/kernel/bin/
+/kernel/.deps-obtained
+
+# Editor temporary files
+*~
+*.swp
+*.swo
+
+/edk2-ovmf-bins/
+/limine-binary/
